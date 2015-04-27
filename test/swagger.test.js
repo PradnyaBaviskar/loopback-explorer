@@ -170,6 +170,25 @@ describe('swagger definition', function() {
       });
     });
 
+    /* it('accepts array', function(done) {
+      var app = createLoopbackAppWithModel();
+      //givenPrivateAppModel(app, 'Image');
+      givenSharedMethod(app.models.Product, 'setImage', {
+        accepts: {
+          arg: 'messages',
+          type: 'array',
+          items: { type: "string" } 
+        },
+        returns: {arg: 'greetMessage', type: 'json'}
+      });
+      mountExplorer(app);
+
+      getAPIDeclaration(app, 'products').end(function(err, res) {
+        expect(res.body.apis[0].operations[0].parameters[0].name).to.eql('messages');
+        done();
+      });
+    }); */
+
     it('includes models from `returns` args', function(done) {
       var app = createLoopbackAppWithModel();
       givenPrivateAppModel(app, 'Image');
